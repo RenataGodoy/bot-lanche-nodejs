@@ -2,17 +2,9 @@ const venom = require('venom-bot');
 
 venom
 .create({
-    headless: false, // Torna o navegador visível
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-infobars', // Desabilita a barra de informação "Este navegador está sendo controlado"
-      '--disable-dev-shm-usage', // Pode ajudar em alguns casos
-      '--remote-debugging-port=9222', // Habilita o modo de depuração remota
-      '--disable-features=VizDisplayCompositor', // Pode ajudar com a exibição do navegador
-    ],
-    userDataDir: './user_data', // Cria um diretório para armazenar dados do usuário e evitar o modo anônimo
-  })
+  headless: false,
+  userDataDir: 'D:/Projetos/bot-lanchePreta/user_data', // Caminho absoluto
+})
   .then((client) => start(client))
   .catch((error) => console.log(error));
 
